@@ -1,0 +1,16 @@
+import useSWR from 'swr'
+import {fechtApi} from 'lib/api'
+
+export function useMe(){
+  const { data, error} = useSWR("/me",fechtApi)
+  console.log(error);
+  
+  return data;
+}
+
+export function useProducts(){
+    const { data, error} = useSWR("/products",fechtApi)
+    console.log(error);
+    
+    return data;
+  }

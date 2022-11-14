@@ -1,0 +1,14 @@
+import { useProducts } from "lib/hooks"
+
+export function Products({productsID}){
+    const myData = useProducts(productsID);
+    return (
+    <div>
+        <header>
+            My Data : {JSON.stringify(myData)}
+        </header>
+        <div>{children}</div>
+        <footer></footer>
+    </div>
+    );
+  }

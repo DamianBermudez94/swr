@@ -1,0 +1,25 @@
+import React, {useState} from "react";
+import {fechtApi} from "lib/api"
+
+
+export function Login(){
+    const [loginData, setEmail] = useState("")
+    function handlerEmailForm(e){
+        e.preventDefault();
+        const email = e.target.email.value;
+        setEmail(email);
+    }
+
+    function handlerCode(e){
+        e.preventDefault();
+        const code = e.target.email.value;
+        fechtApi("auth/token"+code)
+        
+    }
+
+    return (
+        <div>
+        <form onSubmit={handlerEmailForm}></form>
+        </div>
+    );
+}
